@@ -1,5 +1,6 @@
 function matrix(n) {
     const results=[];
+    //init  matrix
     for(let i=0;i<n;i++)
     {
         results.push([]);
@@ -45,8 +46,6 @@ function matrix(n) {
             counter++;
         }
         startColumn++;
-
-
     }
 
 
