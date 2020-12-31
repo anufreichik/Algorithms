@@ -45,4 +45,24 @@ class Tree{
             fn(node);
         }
     }
+    levelWidth(root){
+        let counters=[0];
+        let arr=[this.root, 's'];
+        while(arr.length>1)
+        {
+            let node = arr.shift();
+            if(node==='s'){
+                counters.push(0);
+                arr.push('s')
+            }
+            else{
+                let children = node.children;
+                arr.push(...children);
+                counters[counters.length-1]++;
+
+            }
+
+        }
+        return counters;
+    }
 }
