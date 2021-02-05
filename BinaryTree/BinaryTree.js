@@ -41,9 +41,11 @@ BST.prototype.depthFirstTraversal = function(iteratorFunc){
 function log(value){
     console.log(value);
 }
-
+bst.insert(40);
+bst.insert(30);
+bst.insert(22);
+bst.insert(12);
 bst.depthFirstTraversal(log);
 
-bst.insert(30);
-bst.insert(70);
+
 bst.contains(50);

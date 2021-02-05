@@ -4,6 +4,9 @@ class Node{
         this.left=null;
         this.right=null
     }
+
+    //check if value > or < and  recursivly call insert unless left or right node null
+    //then set data of current node new Node
   insert(data){
         if (data<this.data && this.left) {
             this.left.insert(data);
