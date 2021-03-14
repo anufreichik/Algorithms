@@ -1,4 +1,4 @@
-function countSignals(frequencies, filterRanges) {
+function countSignals_rangeFrequency(frequencies, filterRanges) {
 
     let result = [];
     let count = 0;
