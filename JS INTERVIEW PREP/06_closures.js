@@ -1,6 +1,5 @@
 function createFrameworkManager(){
-    const fw = ['Angular', 'React', 'Vue'
-    ]
+    const fw = ['Angular', 'React', 'Vue']
 
     return{
         print:function(){

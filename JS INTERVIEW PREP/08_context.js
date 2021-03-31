@@ -67,4 +67,55 @@ new Cat('red')
 //This Cat{color:'red'}
 //Arrow this Cat{color:'red'}
 
+function hello(){
+    console.log('hello', this)
+}
+const person={
+    name:'marina',
+    sayHello:hello,
+    sayHelloWindow:hello.bind(window),//binding context to window,
+    logInfo:function(job, phone){
+        console.group(`${this.name} info:`)
+        console.log(`Name is ${this.name}`)
+        console.log(`Job is ${job}`)
+        console.log(`Phone is ${phone}`)
+        console.groupEnd();
+    }
+}
+
+const lena={
+    name:'elelna',
+    age:22
+}
+
+person.logInfo.bind(lena)();
+
+person.logInfo.bind(lena,'FrontEnd', '1232343435' )(); //bind return function and not calling it right away
+
+person.logInfo.call(lena, 'FrontEnd', '1232343435');//call function immediatly
+
+person.logInfo.apply(lena, ['FrontEnd', '1232343435']);//only can be 2 params, second param is array
+window.hello();//context this will be window
+person.sayHello()//context will be person
+
+
+
+
+/////======================================CONTEXT and PROTOTYPES
+
+const array=[1,2,3,4,5]
+
+function multBy(arr, n){
+    return arr.map(el=>el*n)
+}
+
+console.log(multBy(array, 5));
+
+//how to make that array has this function MultFive custom
+Array.prototype.multBy = function(n){
+    console.log('multBy', this)//
+   return  this.map(el=>el*n)
+}
+
+log(array.multBy(5))
 
