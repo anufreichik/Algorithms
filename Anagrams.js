@@ -27,7 +27,7 @@ function buildCharMap(str){
     const charMap={}
     for(let char of str.replace(/[^\w]/g,'').toLowerCase())
     {
-        charMap[char]=charMap+1||1;
+        charMap[char]=charMap[char]+1||1;
     }
     return charMap;
 }

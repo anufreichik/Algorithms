@@ -7,13 +7,6 @@ document.getElementById('txtSearch').addEventListener('keyup', debounceSearch(()
 function getData(text) {
     console.log('test is: ' + text);
 }
-
-function getInputData(){
-    console.log('inside getData')
-    let val = document.getElementById('txtSearch').value;
-    console.log(val)
-}
-
 function debounce(fn, delay) {
     let timerId;
     return (...args) => {
@@ -25,6 +18,11 @@ function debounce(fn, delay) {
     };
 }
 
+function getInputData(){
+    console.log('inside getData')
+    let val = document.getElementById('txtSearch').value;
+    console.log(val)
+}
 
 function debounceSearch(fn, delay){
     let timer=null;
